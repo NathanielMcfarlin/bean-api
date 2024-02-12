@@ -1,0 +1,12 @@
+{
+  "preferences": [
+    {
+      "id": 1,
+      "temperature": "Hot"
+    },
+    {
+      "id": 2,
+      "temperature": "Cold"
+    }
+  ]
+}

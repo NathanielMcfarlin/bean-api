@@ -1,0 +1,12 @@
+{
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Coffee"
+    },
+    {
+      "id": 2,
+      "name": "Tea"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "orderedDrinks": [
+    {
+      "id": 1,
+      "drink_id": 1,
+      "order_id": 1,
+      "preference_id": 1
+    },
+    {
+      "id": 2,
+      "drink_id": 2,
+      "order_id": 1,
+      "preference_id": 2
+    },
+    {
+      "id": 3,
+      "drink_id": 1,
+      "order_id": 2,
+      "preference_id": 2
+    },
+    {
+      "id": 4,
+      "drink_id": 2,
+      "order_id": 2,
+      "preference_id": 1
+    }
+  ]
+}

@@ -15,8 +15,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+from beanapi.views import (
+    UserViewSet,
+    DrinkViewSet,
+    PreferenceViewSet,
+    OrderedDrinkViewSet,
+    OrdersViewSet,
+    CartViewSet,
+    PastOrderedDrinkViewSet
+)
+
+router = DefaultRouter(trailing_slash=False)
+router.register(r"drinks", DrinkViewSet, "drink")
+router.register(r"preferences", PreferenceViewSet, "preference")
+router.register(r"orders", OrdersViewSet, "order")
+router.register(r"ordered_drinks", OrderedDrinkViewSet, "ordered_drinks")
+router.register(r"cart", CartViewSet, "cart")
+router.register(r"past_orders", PastOrderedDrinkViewSet, "past_orders")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("", include(router.urls)),
+    path("login", UserViewSet.as_view({"post": "user_login"}), name="login"),
+    path(
+        "register", UserViewSet.as_view({"post": "register_account"}), name="register"
+    )
 ]
